@@ -16,7 +16,7 @@ def test():
 
         output_text = output['choices'][0]['text']
 
-        print(output_text)
+        return output_text
     
 
 
