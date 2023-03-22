@@ -1,23 +1,25 @@
-secret_key = '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'
+secret_key = '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'
 
-#print(prompt)
 import openai
+from flask import Flask
+
 openai.api_key = secret_key
+app = Flask(__name__)
 
+@app.route('/')
 def test():
-    while True:
-        prompt = input()
+    while True :
+        prompt = input("Enter your prompt: ")
         output = openai.Completion.create(
-            model = 'text-davinci-003',
-            prompt = prompt,
-            max_tokens= 1000,
-            temperature =0
+            model='text-davinci-003',
+            prompt=prompt,
+            max_tokens=1000,
+            temperature=0
         )
-
         output_text = output['choices'][0]['text']
-
         return output_text
-    
 
+if __name__ == '__main__':
+    app.debug=True
+    app.run()
 
-    #print(output)
