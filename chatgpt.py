@@ -2,6 +2,7 @@
 
 import openai
 from flask import Flask
+from env import secret_key
 
 openai.api_key = secret_key
 app = Flask(__name__)
