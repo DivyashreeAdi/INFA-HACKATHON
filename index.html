@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenAI Chatbot</title>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <label for="prompt">Enter your prompt:</label><br>
+      <input type="text" id="prompt" name="prompt"><br>
+      <input type="submit" value="Submit">
+    </form>
+    {% if output_text %}
+      <h2>Output:</h2>
+      <p>{{ output_text }}</p>
+    {% endif %}
+  </body>
+</html>
