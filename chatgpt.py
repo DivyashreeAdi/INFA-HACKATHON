@@ -1,10 +1,11 @@
 
 
 import openai
+import os
 from flask import Flask
-from env import secret_key
+#from env import secret_key
 
-openai.api_key = secret_key
+openai.api_key = os.environ.get('secret_key')
 app = Flask(__name__)
 
 @app.route('/')
