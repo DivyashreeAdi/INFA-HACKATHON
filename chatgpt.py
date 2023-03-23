@@ -1,4 +1,4 @@
-secret_key = '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'
+
 
 import openai
 from flask import Flask
